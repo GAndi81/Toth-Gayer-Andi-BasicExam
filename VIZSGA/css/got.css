@@ -1,3 +1,6 @@
 body {
-    background-color: aqua;
+    background-image: assets/site/(mapblue.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
 }
+
