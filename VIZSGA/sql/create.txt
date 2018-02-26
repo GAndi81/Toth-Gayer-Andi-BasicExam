@@ -1,0 +1,57 @@
+got -
+dcFbZHzMGa23dLYn
+
+Adatbázis lekérdezések:
+
+CREATE USER 'characters'@'localhost' IDENTIFIED WITH mysql_native_password AS '***';GRANT USAGE ON *.* TO 'characters'@'localhost' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;CREATE DATABASE IF NOT EXISTS `characters`;GRANT ALL PRIVILEGES ON `characters`.* TO 'characters'@'localhost';
+
+
+CREATE TABLE characters (
+
+id bigint(20) not null PRIMARY KEY,
+dead bool(2) not null,
+name varchar(50) not null,
+alias varchar(50) not null,
+portrait varchar(50) not null,
+picture varchar(50) not null,
+bio varchar(255) not null,
+organization varchar(30) null,
+house varchar(30) not null) ENGINE=InnoDB;
+
+
+INSERT INTO `characters` (`id`, `dead`, `name`, `alias`, `portrait`, `picture`, `bio`, `organization`, `house`) VALUES - stb.....
+
+
+a.	Melyik házba hány élõ karakter tartozik, amelyik nem tartozik egy szervezethez sem. Tehát a ház neve, és az adott házba tartozó karakterek száma. (ha él, és egy szervezetnek sem tagja)
+
+SELECT name
+FROM `characters`
+WHERE dead = 'true' AND organization = '';
+
+b.	Minden olyan karakter minden adata, aki él, és akinek a történetében a „hero” szó szerepel, és még életben van.
+
+SELECT * FROM characters
+where dead <> true and bio LIKE '%hero%';
+
+c.	Az éjjeli õrség szervezet tagjai, akik életben vannak, és nem tartoznak egy házhoz sem.
+
+SELECT * FROM characters where organization = 'nightwatch' AND house = '';
+
+d.	Azon élõ karakterek 
+•	Nevét, mint Hero, 
+•	Alias (bece) nevét, mint Nick Name és 
+•	házát, mint Big House, 
+akik 
+•	életben vannak, 
+•	nem Lannisterek (tehát nem a Lannister házba tartoznak), 
+•	nem a Royalguard tagjai, 
+•	és a történetükben nem szerepel a Lennister vagy a King’s Landing szó.
+
+
+SELECT name AS hero, alias AS Nick_Name, house AS Big_House
+FROM `characters`
+WHERE dead <> '' AND house <> 'Lannister' AND organization <> 'royalguard' AND (bio NOT LIKE '%Lennister%' OR '%King's Landing%');
+
+
+
+
