@@ -13,7 +13,7 @@ function successAjax(xhttp) {
     // itt a json content, benne a data változóban
     var userDatas = JSON.parse(xhttp.responseText);
     console.log(userDatas[0].data);
-    imgGallery();
+    pictureHeader();
 
     /*
       Pár sorral lejebb majd ezt olvashatod:
@@ -42,14 +42,16 @@ getData('json/got.json', successAjax);
     return
 }*/
 
-
+/*
 var userDataKeys = ["id", "dead", "name", "alias", "portrait", "picture", "bio", "organization", "house"];
 
-var tableContainer = document.getElementById('tablecontainer_1');
-var pictureGallery = document.createElement('pictureGallery');
-var pictureHeader = document.createElement('pictureHeader');
-var headerTr = document.createElement('headerTr');
-var pictureGalleryBody = document.createElement('pictureGalleryBody');
+var tableContainer = document.getElementById('img src="assets/jon.png"');
+
+var pictureGallery = document.createElement('img');
+var pictureHeader = document.createElement('');
+var headerTr = document.createElement('');
+var pictureGalleryBody = document.createElement(');
+
 
 
 pictureGallery.appendChild(pictureHeader);
@@ -57,19 +59,19 @@ pictureHeader.border = 1;
 pictureHeader.appendChild(headerTr);
 pictureGallery.appendChild(pictureGalleryBody);
 
-table.appendChild(tbody);
 
-var appear = function () {
-    for (var i = 0; i < headerNamesArray.length; i++) {
-        var headerName = headerNamesArray[i]
-        var th = document.createElement("th");
-        th.innerText = headerName;
+var pictureHeader = function () {
+    for (var i = 0; i < userDataKeys.length; i++) {
+        var pictureHeader = userDataKeys[i]
+        var egykep = document.createElement("egykep");
+        egykep.innerText = pictureHeader;
         headerTr.appendChild(th);
     }
 }
 
-var appearTableBody = function (usersArray) {
-        for (var i = 0; i < usersArray.length; i++) {
+/*
+var pictureGalleryBody = function (userDataKeys) {
+        for (var i = 0; i < userDataKeys.length; i++) {
             var userObject = usersArray[i]
 
             var tr = document.createElement('tr');
@@ -83,4 +85,6 @@ var appearTableBody = function (usersArray) {
                 td.innerText = attribute;
                 tr.appendChild(td);
             }
-        }
+        }*/
+
+        var name = document.getElementById()

@@ -1,6 +1,20 @@
 body {
-    background-image: assets/site/(mapblue.jpg);
-    background-repeat: no-repeat;
+    background-image: assets/site/[sandor.png];
     background-position: center;
+    background-color: #C9D3E2;
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
 }
 
+;
+.login {
+    margin: 30px auto;
+    width: 500px;
+    height: 500px;
+    border: 1px solid #C9D3E2;
+    background: repeating-linear-gradient(to bottom right, #759CD5, #12365A)
+}
+
+p {
+    margin: 10px;
+}
