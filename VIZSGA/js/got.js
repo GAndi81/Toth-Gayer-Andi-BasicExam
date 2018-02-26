@@ -32,16 +32,55 @@ getData('json/got.json', successAjax);
 // Live servert használd mindig!!!!!
 /* IDE ÍRD A FÜGGVÉNYEKET!!!!!! NE EBBE AZ EGY SORBA HANEM INNEN LEFELÉ! */
 
-function imgGallery() {
-    var table_container_1 = new Array();
-    myImage[0] = "penguins.jpg";
-    myImage[1] = "desert.jpg";
-    myImage[2] = "jellyfish.jpg";
-    myImage[3] = "flower.jpg";
-    for (let i = 0; i < 8; i++) {
-        var element = array[i];
-    }
-    ImageCnt++;
 
-    document.getElementById("table_container_1").style.background = 'url(myImage[ImageCnt])';
+/*var tomb = function () {
+    var nev = prompt('hol a kép?')
+    var iconGallery = [];
+    for (var i = 0; i < iconGallery.length; i++) {
+        var element = iconGallery.length[i];
+    }
+    return
+}*/
+
+
+var userDataKeys = ["id", "dead", "name", "alias", "portrait", "picture", "bio", "organization", "house"];
+
+var tableContainer = document.getElementById('tablecontainer_1');
+var pictureGallery = document.createElement('pictureGallery');
+var pictureHeader = document.createElement('pictureHeader');
+var headerTr = document.createElement('headerTr');
+var pictureGalleryBody = document.createElement('pictureGalleryBody');
+
+
+pictureGallery.appendChild(pictureHeader);
+pictureHeader.border = 1;
+pictureHeader.appendChild(headerTr);
+pictureGallery.appendChild(pictureGalleryBody);
+
+table.appendChild(tbody);
+
+var appear = function () {
+    for (var i = 0; i < headerNamesArray.length; i++) {
+        var headerName = headerNamesArray[i]
+        var th = document.createElement("th");
+        th.innerText = headerName;
+        headerTr.appendChild(th);
+    }
 }
+
+var appearTableBody = function (usersArray) {
+        for (var i = 0; i < usersArray.length; i++) {
+            var userObject = usersArray[i]
+
+            var tr = document.createElement('tr');
+            tbody.appendChild(tr);
+
+
+            for (var j = 0; j < userDataKeys.length; j++) {
+                var key = userDataKeys[j]; // pl. "city"
+                var attribute = userObject[key];
+                var td = document.createElement("td");
+                td.innerText = attribute;
+                tr.appendChild(td);
+            }
+        }
